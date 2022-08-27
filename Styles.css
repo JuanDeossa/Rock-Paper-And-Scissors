@@ -1,24 +1,45 @@
-/* font-family: 'Silkscreen', cursive; */
-
+/* Google fonts
+font-family: 'Berkshire Swash', cursive;
+font-family: 'Chakra Petch', sans-serif;
+font-family: 'DynaPuff', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Rubik Iso', cursive;
+*/
+:root{
+    --gbcTime: 15s;
+    --bitcoin-orange:#F7931A;
+    --soft-orange:#FFE9D5;
+    --secondary-blue:#1A9AF7;
+    --soft-blue:#E7F5FF;
+}
 *{box-sizing: border-box;margin:0%;padding: 0%;}
 html{
     font-size: 6.25%;
-    font-family: sans-serif;
 }
-header{
+body{
+    height: 100vh;
+    /* Animated gradient on background color */
+    background: linear-gradient(197deg, #0ecf6f, #42e1cb, #ac09d0);
+    background-size: 100% 300%;
+    -webkit-animation: AnimationName var(--gbcTime) ease infinite;
+    -moz-animation: AnimationName var(--gbcTime) ease infinite;
+    -o-animation: AnimationName var(--gbcTime) ease infinite;
+    animation: AnimationName var(--gbcTime) ease infinite;
+}
+.title-icon{
+    background-image: url("https://cdn-icons-png.flaticon.com/512/1862/1862933.png");
+    height: 10px;
+}
+#header{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 80px;
-    font-family: 'Silkscreen', cursive, sans-serif;
-    background: linear-gradient(270deg, #6429cd, #0ecf6f, #42e1cb);
-    background-size: 600% 600%;
-
-    -webkit-animation: AnimationName 15s ease infinite;
-    -moz-animation: AnimationName 15s ease infinite;
-    animation: AnimationName 15s ease infinite;
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    line-height: 25px;
+    padding: 15rem;
+    text-shadow: 1px 1px 1px black;
 }
-
 
 header h1{
     font-size: 20rem;
@@ -34,21 +55,25 @@ header p{
     color: white;
 }
 
-
 @-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0%{background-position:29% 0%}
+    50%{background-position:72% 100%}
+    100%{background-position:29% 0%}
 }
 @-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0%{background-position:29% 0%}
+    50%{background-position:72% 100%}
+    100%{background-position:29% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:29% 0%}
+    50%{background-position:72% 100%}
+    100%{background-position:29% 0%}
 }
 @keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0%{background-position:29% 0%}
+    50%{background-position:72% 100%}
+    100%{background-position:29% 0%}
 }
 
 
