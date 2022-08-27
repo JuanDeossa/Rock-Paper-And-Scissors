@@ -1,12 +1,55 @@
+/* font-family: 'Silkscreen', cursive; */
+
 *{box-sizing: border-box;margin:0%;padding: 0%;}
 html{
     font-size: 6.25%;
+    font-family: sans-serif;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80px;
+    font-family: 'Silkscreen', cursive, sans-serif;
+    background: linear-gradient(270deg, #6429cd, #0ecf6f, #42e1cb);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
 }
 
 
+header h1{
+    font-size: 20rem;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+}
+
+header p{
+    font-size: 10rem;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+}
 
 
-
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 
 
 /*
