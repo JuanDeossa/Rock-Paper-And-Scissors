@@ -31,7 +31,7 @@ body{
     background-image: url("https://cdn-icons-png.flaticon.com/512/1862/1862933.png");
     height: 10px;
 }
-#header{
+header{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -54,6 +54,114 @@ header p{
     font-weight: 400;
     color: white;
 }
+.Scores{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 15rem;
+    text-align: center;
+    border: 1px double grey;
+    border-radius: 10px;
+    margin: 0 25rem;
+    padding: 5rem 0%;
+}
+.Scores h3 {
+    font-family: "Chakra Petch", sans-serif;
+    text-shadow: 1px 1px 1px black;
+    color: grey;
+
+}
+.Scores p {
+    font-family: "Chakra Petch", sans-serif;
+    text-shadow: 1px 1px 1px white;
+    color: black;
+}
+.Buttons{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+        " Pl Pl Pl"
+        " R  Pp S ";
+}
+.Buttons div{
+    background-color: #E7F5FF;
+    border: 2px solid gray;
+    height: 80px; width: 80px;
+    border-radius: 25%;
+    justify-self: center;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: 80% ;
+    background-position: center;
+}
+.Buttons div:hover{
+    transform: scale(1.15);
+}
+.Buttons div:active{
+    border-color: #ac09d0;
+}
+.Buttons__Play{
+    font-family: "Chakra Petch", sans-serif, Arial, Helvetica, sans-serif;
+    font-size: 25rem;
+    font-weight: 900;
+    grid-area: Pl;
+    width: 50%;
+    height: 40px;
+    border-radius: 50px;
+    margin: 20rem auto;
+    /* Gradient-Color Background  */
+    background: linear-gradient(335deg, #3ad4da, #874def);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationNamePB 4s ease infinite;
+    -moz-animation: AnimationNamePB 4s ease infinite;
+    -o-animation: AnimationNamePB 4s ease infinite;
+    animation: AnimationNamePB 4s ease infinite;
+}
+.Buttons__Rock{
+    grid-area: R;
+    background-image: url("https://i.postimg.cc/DZwcY8Y2/Rock.png");
+}
+.Buttons .Buttons__Paper{
+    grid-area: Pp;
+    background-image: url("https://i.postimg.cc/4ytwpjSt/paper.png");
+    background-size: 65%;
+}
+.Buttons .Buttons__Scissors{
+    grid-area: S;
+    background-image: url("https://i.postimg.cc/Ss1G0kwc/Scissors.png");
+    background-size: 60%;
+}
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 4rem;
+    font-family: "Chakra Petch", sans-serif, Arial, Helvetica, sans-serif;
+    font-size: 10rem;
+    background-color: #31a2b9;
+    border-radius: 5px;
+}
+footer section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 10px;
+}
+.Icons__GH{
+    display: inline-block;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111425.png');
+    width: 20px; height: 20px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+.Icons__LI{
+    display: inline-block;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3938/3938060.png');
+    width: 20px; height: 20px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+
 
 @-webkit-keyframes AnimationName {
     0%{background-position:29% 0%}
@@ -76,8 +184,28 @@ header p{
     100%{background-position:29% 0%}
 }
 
+@-webkit-keyframes AnimationNamePB {
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+@-moz-keyframes AnimationNamePB {
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+@-o-keyframes AnimationNamePB {
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+@keyframes AnimationNamePB {
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
 
 /*
 https://cdn-icons-png.flaticon.com/512/2111/2111425.png  Github
 https://cdn-icons-png.flaticon.com/512/3938/3938060.png Linkedin
 */ 
+
