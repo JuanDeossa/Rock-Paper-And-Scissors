@@ -1,12 +1,12 @@
 let optionPlayer;
+let countWin = 0;
+let countLose = 0;
 let btnRock = document.querySelector('.Buttons__Rock');
 let btnPaper = document.querySelector('.Buttons__Paper');
 let btnScissor = document.querySelector('.Buttons__Scissors');
 let btnPlay = document.querySelector('.Buttons__Play')
 let scorePlayer = document.querySelector('.scorePlayer');
-scorePlayer.innerHTML = 0;
 let scoreAI = document.querySelector('.scoreAI');
-scoreAI.innerHTML = 0;
 
 btnPlay.addEventListener('click',rockPaperScissors)
 btnRock.addEventListener('click',playerChooseRock)
@@ -32,13 +32,15 @@ function getRandomIntInclusive(min, max) {
 function compareResult(choosePlayer,chooseAI) {
     btnPlay.innerHTML = "Try again!"
     if ((choosePlayer == 1 && chooseAI == 3) || (choosePlayer == 2 && chooseAI == 1) || (choosePlayer == 3 && chooseAI == 2)) {
-        scorePlayer = scorePlayer + 1;
+        countWin = countWin + 1;
+        scorePlayer.innerHTML = countWin
         alert('Win Player')
     } else if ((choosePlayer == 1 && chooseAI == 2) || (choosePlayer == 2 && chooseAI == 3) || (choosePlayer == 3 && chooseAI == 1)) {
-        scoreAI = scoreAI + 1;
+        countLose = countLose + 1;
+        scoreAI.innerHTML = countLose
         alert('Win AI')
     } else {
-        btnPlay.innerHTML = "Draw!!"
+        btnPlay.innerHTML = "Draw! Try again"
         alert('Better luck next time')
     }
 }
@@ -54,5 +56,4 @@ function rockPaperScissors(event) {
         optionAI = 3
     }
     compareResult(optionPlayer,optionAI)
-    console.log(optionPlayer + optionAI);
 }
