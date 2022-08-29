@@ -57,3 +57,10 @@ function rockPaperScissors(event) {
     }
     compareResult(optionPlayer,optionAI)
 }
+
+/*
+https://i.postimg.cc/zXTLCKGQ/Rock-Bot.png
+https://i.postimg.cc/WpBFqXTr/Paper-Bot.png
+https://i.postimg.cc/J7DHh9VM/Scissors-Bot.png
+*/
+
