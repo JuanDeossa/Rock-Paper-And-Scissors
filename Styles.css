@@ -40,14 +40,12 @@ header{
     padding: 15rem;
     text-shadow: 1px 1px 1px black;
 }
-
 header h1{
     font-size: 20rem;
     text-align: center;
     font-weight: 700;
     color: white;
 }
-
 header p{
     font-size: 10rem;
     text-align: center;
@@ -55,8 +53,10 @@ header p{
     color: white;
 }
 .Scores{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    width: 80%;
     font-size: 15rem;
     text-align: center;
     border: 1px double grey;
@@ -69,17 +69,59 @@ header p{
     font-family: "Chakra Petch", sans-serif;
     text-shadow: 1px 1px 1px black;
     color: grey;
-
 }
 .Scores p {
     font-family: "Chakra Petch", sans-serif;
     text-shadow: 1px 1px 1px white;
     color: black;
 }
+.Scores__Bot,.Scores__Player{
+    grid-row: 1;
+}
+.Scores__Results{
+    width: 100%;
+    grid-row: 2;
+    grid-column: 1/span2;
+    /* background-color: #874def;  */
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    /* display: none; */
+}
+.Scores__Results div{
+    background-color: rgb(32, 32, 32);
+    border: 2px solid gray;
+    height: 50px; width: 50px;
+    border-radius: 25%;
+    justify-self: center;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: 60% ;
+    background-position: center;
+}
+.Scores__Results--Player {
+    background-image: url("https://i.postimg.cc/DZwcY8Y2/Rock.png");
+}
+.Scores__Results--Bot {
+    background-image: url("https://i.postimg.cc/zXTLCKGQ/Rock-Bot.png");
+}
+.Scores__Results--Player{
+    grid-row: 1;
+    grid-column: 1;
+}
+.Scores__Results--Bot{
+    grid-row: 1;
+    grid-column: 2;
+}
+.Scores__Results p{
+    grid-row: 2;
+    grid-column: 1/span2;
+}
 .Buttons{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: auto 33vw ;
+    grid-template-rows: auto auto ;
     grid-template-areas: 
         " Pl Pl Pl"
         " R  Pp S ";
@@ -87,7 +129,7 @@ header p{
 .Buttons div{
     background-color: #E7F5FF;
     border: 2px solid gray;
-    height: 60%; width: 60%;
+    height: 70px; width: 70px;
     border-radius: 25%;
     justify-self: center;
     align-self: center;
@@ -106,10 +148,10 @@ header p{
     font-size: 25rem;
     font-weight: 900;
     grid-area: Pl;
-    width: 50%;
     height: 40px;
     border-radius: 50px;
-    margin: 20rem auto;
+    margin: 10rem auto;
+    padding: 1px 20px 10px;
     /* Gradient-Color Background  */
     background: linear-gradient(335deg, #3ad4da, #874def);
     background-size: 400% 400%;
@@ -118,7 +160,13 @@ header p{
     -o-animation: AnimationNamePB 4s ease infinite;
     animation: AnimationNamePB 4s ease infinite;
 }
-.Buttons__Rock{
+.Buttons div button{
+    width: 100%; height: 100%;
+    background:none;
+    border: none;
+    border-radius: 25%;
+}
+.Buttons .Buttons__Rock{
     grid-area: R;
     background-image: url("https://i.postimg.cc/DZwcY8Y2/Rock.png");
     background-size: 65%;
@@ -163,6 +211,8 @@ footer section{
     background-size: contain; 
     background-repeat: no-repeat;
 }
+
+
 
 @-webkit-keyframes AnimationName {
     0%{background-position:29% 0%}
