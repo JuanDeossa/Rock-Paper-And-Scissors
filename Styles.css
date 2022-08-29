@@ -37,17 +37,17 @@ header{
     justify-content: space-evenly;
     font-family: 'Press Start 2P', cursive, sans-serif;
     line-height: 25px;
-    padding: 15rem;
+    padding: 15px;
     text-shadow: 1px 1px 1px black;
 }
 header h1{
-    font-size: 20rem;
+    font-size: 25px;
     text-align: center;
     font-weight: 700;
     color: white;
 }
 header p{
-    font-size: 10rem;
+    font-size: 10px;
     text-align: center;
     font-weight: 400;
     color: white;
@@ -57,13 +57,13 @@ header p{
     grid-template-columns: 50% 50%;
     grid-template-rows: auto auto;
     width: 80%;
-    font-size: 15rem;
+    font-size: 15px;
     text-align: center;
     border: 1px double grey;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 10% auto 10%;
     padding: 5rem 0%;
-    max-width: 800px;
+    max-width: 400px;
 }
 .Scores h3 {
     font-family: "Chakra Petch", sans-serif;
@@ -99,6 +99,7 @@ header p{
     background-repeat: no-repeat;
     background-size: 60% ;
     background-position: center;
+    /* display: none; */
 }
 .Scores__Results--Player {
     background-image: url("https://i.postimg.cc/DZwcY8Y2/Rock.png");
@@ -119,12 +120,14 @@ header p{
     grid-column: 1/span2;
 }
 .Buttons{
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: auto auto ;
     grid-template-areas: 
         " Pl Pl Pl"
         " R  Pp S ";
+    max-width: 500px;
 }
 .Buttons div{
     background-color: #E7F5FF;
@@ -137,20 +140,25 @@ header p{
     background-size: 80% ;
     background-position: center;
 }
-.Buttons div:hover{
+.Buttons *:hover{
     transform: scale(1.15);
-}
-.Buttons div:active{
     border-color: #ac09d0;
+    border-width: 3px;
+}
+/* Tooggle when any button is clicked or unclicked */
+.Buttons--active{
+    transform: scale(1.15);
+    border-color: #ac09d0;
+    border-width: 3px;
 }
 .Buttons__Play{
     font-family: "Chakra Petch", sans-serif, Arial, Helvetica, sans-serif;
-    font-size: 25rem;
+    font-size: 25px;
     font-weight: 900;
     grid-area: Pl;
     height: 40px;
     border-radius: 50px;
-    margin: 10rem auto;
+    margin: 0% auto 10%;
     padding: 1px 20px 10px;
     /* Gradient-Color Background  */
     background: linear-gradient(335deg, #3ad4da, #874def);
@@ -183,10 +191,11 @@ header p{
 }
 footer{
     position: absolute;
-    width: 100%;
-    bottom: 4rem;
+    width: 95%;
+    left: 2.5%;
+    bottom: 4px;
     font-family: "Chakra Petch", sans-serif, Arial, Helvetica, sans-serif;
-    font-size: 10rem;
+    font-size: 10px;
     background-color: #31a2b9;
     border-radius: 5px;
 }
@@ -195,7 +204,7 @@ footer section{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 10px;
+    padding: 2px 10px;
 }
 .Icons__GH{
     display: inline-block;
@@ -259,3 +268,55 @@ footer section{
 https://cdn-icons-png.flaticon.com/512/2111/2111425.png  Github
 https://cdn-icons-png.flaticon.com/512/3938/3938060.png Linkedin
 */
+
+@media (min-width:750px) {
+    header h1{
+        font-size: 55px    ;
+        line-height: 130%;
+    }
+    header p{
+        font-size: 30px    ;
+    }
+    .Scores{
+        font-size: 30px;
+        max-width: 700px;
+    }
+    .Scores__Results div{
+        height: 140px; width: 140px;
+        /* background-color: rgb(32, 32, 32);
+        border: 2px solid gray;
+        border-radius: 25%;
+        justify-self: center;
+        align-self: center;
+        background-repeat: no-repeat;
+        background-size: 60% ;
+        background-position: center; */
+        /* display: none; */
+    }
+    footer {
+        display: flex;
+        flex-direction: row;
+    }
+    footer section{
+        font-size: 12px;
+        padding: 10px 10px;
+    }
+    .Buttons{
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto auto ;
+        grid-template-areas: 
+            " Pl Pl Pl"
+            " R  Pp S ";
+        max-width: 700px;
+    }
+    .Buttons div{
+        height: 200px; width: 200px;
+    }
+    .Buttons__Play{
+        font-size: 60px;
+        padding: 1px 40px 80px;
+    }
+}
+
