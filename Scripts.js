@@ -18,15 +18,24 @@ btnScissor.addEventListener('click',playerChooseScissor)
 
 function playerChooseRock() {
     optionPlayer = 1;
-    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/zXTLCKGQ/Rock-Bot.png)'
+    btnRock.classList.add('selectPlayer');
+    btnPaper.classList.remove('selectPlayer');
+    btnScissor.classList.remove('selectPlayer');
+    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/DZwcY8Y2/Rock.png)'
 }
 function playerChoosePaper() {
     optionPlayer = 2;
-    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/WpBFqXTr/Paper-Bot.png)'
+    btnPaper.classList.add('selectPlayer');
+    btnRock.classList.remove('selectPlayer');
+    btnScissor.classList.remove('selectPlayer');
+    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/4ytwpjSt/paper.png)'
 }
 function playerChooseScissor() {
     optionPlayer = 3;
-    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/J7DHh9VM/Scissors-Bot.png)'
+    btnScissor.classList.add('selectPlayer');
+    btnRock.classList.remove('selectPlayer');
+    btnPaper.classList.remove('selectPlayer');
+    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/Ss1G0kwc/Scissors.png)'
 }
 
 function getRandomIntInclusive(min, max) {
@@ -36,29 +45,43 @@ function getRandomIntInclusive(min, max) {
 }
 
 function compareResult(choosePlayer,chooseAI) {
-    btnPlay.innerHTML = "Play again!"
-    if ((choosePlayer == 1 && chooseAI == 3) || (choosePlayer == 2 && chooseAI == 1) || (choosePlayer == 3 && chooseAI == 2)) {
-        optionPlayer = 0;
-        countWin = countWin + 1;
-        scorePlayer.innerHTML = "Score: " + countWin
-        screenResultPlayer.classList.remove('inactive');
-        screenResultAI.classList.remove('inactive');
-        textResult.classList.remove('inactive');
-    } else if ((choosePlayer == 1 && chooseAI == 2) || (choosePlayer == 2 && chooseAI == 3) || (choosePlayer == 3 && chooseAI == 1)) {
-        optionPlayer = 0;
-        countLose = countLose + 1;
-        scoreAI.innerHTML = "Score: " + countLose;
-        screenResultPlayer.classList.remove('inactive');
-        screenResultAI.classList.remove('inactive');
-        textResult.classList.remove('inactive');
-    } else if ((choosePlayer == 1 && chooseAI == 1) || (choosePlayer == 2 && chooseAI == 2) || (choosePlayer == 3 && chooseAI == 3)) {
-        optionPlayer = 0;
-        btnPlay.innerHTML = "Draw! Try again";
-        screenResultPlayer.classList.remove('inactive');
-        screenResultAI.classList.remove('inactive');
-        textResult.classList.remove('inactive');
+    if (btnPlay.innerHTML == "Play again!") {
+        btnPlay.innerHTML = "Play"
+        btnRock.classList.remove('selectPlayer');
+        btnPaper.classList.remove('selectPlayer');
+        btnScissor.classList.remove('selectPlayer');
+        screenResultPlayer.classList.add('inactive');
+        screenResultAI.classList.add('inactive');
+        textResult.classList.add('inactive');
     } else {
-        alert('Please select an option');
+        if ((choosePlayer == 1 && chooseAI == 3) || (choosePlayer == 2 && chooseAI == 1) || (choosePlayer == 3 && chooseAI == 2)) {
+            optionPlayer = 0;
+            btnPlay.innerHTML = "Play again!"
+            countWin = countWin + 1;
+            scorePlayer.innerHTML = "Score: " + countWin
+            screenResultPlayer.classList.remove('inactive');
+            screenResultAI.classList.remove('inactive');
+            textResult.classList.remove('inactive');
+            textResult.innerHTML = 'YOU WON!'
+        } else if ((choosePlayer == 1 && chooseAI == 2) || (choosePlayer == 2 && chooseAI == 3) || (choosePlayer == 3 && chooseAI == 1)) {
+            optionPlayer = 0;
+            btnPlay.innerHTML = "Play again!"
+            countLose = countLose + 1;
+            scoreAI.innerHTML = "Score: " + countLose;
+            screenResultPlayer.classList.remove('inactive');
+            screenResultAI.classList.remove('inactive');
+            textResult.classList.remove('inactive');
+            textResult.innerHTML = 'AI WON, BETTER LUCK NEXT TIME!'
+        } else if ((choosePlayer == 1 && chooseAI == 1) || (choosePlayer == 2 && chooseAI == 2) || (choosePlayer == 3 && chooseAI == 3)) {
+            optionPlayer = 0;
+            btnPlay.innerHTML = "Play again!"
+            screenResultPlayer.classList.remove('inactive');
+            screenResultAI.classList.remove('inactive');
+            textResult.classList.remove('inactive');
+            textResult.innerHTML = 'DRAW!'
+        } else {
+            alert('Please select an option');
+        }
     }
 }
 
@@ -67,13 +90,13 @@ function rockPaperScissors(event) {
     let optionAI = getRandomIntInclusive(1,3)
     if (optionAI == 1) {
         optionAI = 1
-        screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/zXTLCKGQ/Rock-Bot.png)'
+        screenResultAI.style.backgroundImage='url(https://i.postimg.cc/zXTLCKGQ/Rock-Bot.png)'
     } else if (optionAI == 2) {
         optionAI = 2
-        screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/WpBFqXTr/Paper-Bot.png)'
+        screenResultAI.style.backgroundImage='url(https://i.postimg.cc/WpBFqXTr/Paper-Bot.png)'
     } else if (optionAI == 3) {
         optionAI = 3
-        screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/J7DHh9VM/Scissors-Bot.png)'
+        screenResultAI.style.backgroundImage='url(https://i.postimg.cc/J7DHh9VM/Scissors-Bot.png)'
     }
     compareResult(optionPlayer,optionAI)
 }
