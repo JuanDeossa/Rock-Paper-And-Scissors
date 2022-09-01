@@ -27,6 +27,9 @@ body{
     -o-animation: AnimationName var(--gbcTime) ease infinite;
     animation: AnimationName var(--gbcTime) ease infinite;
 }
+.inactive{
+    display: none;
+}
 .title-icon{
     background-image: url("https://cdn-icons-png.flaticon.com/512/1862/1862933.png");
     height: 10px;
