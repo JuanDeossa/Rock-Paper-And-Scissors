@@ -21,21 +21,21 @@ function playerChooseRock() {
     btnRock.setAttribute("id",'selectPlayer');
     btnPaper.removeAttribute("id",'selectPlayer');
     btnScissor.removeAttribute("id",'selectPlayer');
-    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/DZwcY8Y2/Rock.png)'
+    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/59SNgv4T/Rock.png)'
 }
 function playerChoosePaper() {
     optionPlayer = 2;
     btnPaper.setAttribute("id",'selectPlayer');
     btnRock.removeAttribute("id",'selectPlayer');
     btnScissor.removeAttribute("id",'selectPlayer');
-    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/4ytwpjSt/paper.png)'
+    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/vThYmR2b/paper.png)'
 }
 function playerChooseScissor() {
     optionPlayer = 3;
     btnScissor.setAttribute("id",'selectPlayer');
     btnRock.removeAttribute("id",'selectPlayer');
     btnPaper.removeAttribute("id",'selectPlayer');
-    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/Ss1G0kwc/Scissors.png)'
+    screenResultPlayer.style.backgroundImage='url(https://i.postimg.cc/MTkKPmj2/Scissors.png)'
 }
 
 function getRandomIntInclusive(min, max) {
@@ -52,14 +52,12 @@ function pad(n, width, z) {
 
 function compareResult(choosePlayer,chooseAI) {
     if (btnPlay.innerHTML == "Play again!") {
-        screenResultPlayer.style.backgroundImage='url(https://cdn-icons-png.flaticon.com/512/1853/1853086.png)'
-        screenResultAI.style.backgroundImage='url(https://cdn-icons-png.flaticon.com/512/3398/3398643.png)'
+        screenResultPlayer.style.backgroundImage=screenResultPlayer.getAttribute("url");
+        screenResultAI.style.backgroundImage=screenResultAI.getAttribute("url");
         btnPlay.innerHTML = "Play"
         btnRock.removeAttribute("id",'selectPlayer');
         btnPaper.removeAttribute("id",'selectPlayer');
         btnScissor.removeAttribute("id",'selectPlayer');
-        // screenResultPlayer.setAttribute("id","inactive");
-        // screenResultAI.setAttribute("id","inactive");
         textResult.setAttribute("id","inactive");
     } else {
         if ((choosePlayer == 1 && chooseAI == 3) || (choosePlayer == 2 && chooseAI == 1) || (choosePlayer == 3 && chooseAI == 2)) {
@@ -71,6 +69,7 @@ function compareResult(choosePlayer,chooseAI) {
             screenResultPlayer.removeAttribute("id",'inactive');
             screenResultAI.removeAttribute("id",'inactive');
             textResult.removeAttribute("id",'inactive');
+            textResult.setAttribute("id","Won");
             textResult.innerHTML = 'YOU WON!'
             btnRock.setAttribute("id","inactive");
             btnPaper.setAttribute("id","inactive");
@@ -84,7 +83,8 @@ function compareResult(choosePlayer,chooseAI) {
             screenResultPlayer.removeAttribute("id",'inactive');
             screenResultAI.removeAttribute("id",'inactive');
             textResult.removeAttribute("id",'inactive');
-            textResult.innerHTML = 'AI WON, BETTER LUCK NEXT TIME!'
+            textResult.setAttribute("id","Lose");
+            textResult.innerHTML = 'YOU LOSE, BETTER LUCK NEXT TIME!'
             btnRock.setAttribute("id","inactive");
             btnPaper.setAttribute("id","inactive");
             btnScissor.setAttribute("id","inactive");
@@ -94,13 +94,14 @@ function compareResult(choosePlayer,chooseAI) {
             screenResultPlayer.removeAttribute("id",'inactive');
             screenResultAI.removeAttribute("id",'inactive');
             textResult.removeAttribute("id",'inactive');
+            textResult.setAttribute("id","Draw");
             textResult.innerHTML = 'DRAW!'
             btnRock.setAttribute("id","inactive");
             btnPaper.setAttribute("id","inactive");
             btnScissor.setAttribute("id","inactive");
         } else {
             alert('Please select an option');
-            screenResultAI.style.backgroundImage='url(https://cdn-icons-png.flaticon.com/512/3398/3398643.png)'
+            screenResultAI.style.backgroundImage='url(https://i.postimg.cc/85kWKwVX/Bot.png)'
         }
     }
 }
@@ -109,20 +110,15 @@ function rockPaperScissors(event) {
     let optionAI = getRandomIntInclusive(1,3)
     if (optionAI == 1) {
         optionAI = 1
-        screenResultAI.style.backgroundImage='url(https://i.postimg.cc/zXTLCKGQ/Rock-Bot.png)'
+        screenResultAI.style.backgroundImage='url(https://i.postimg.cc/HsW-Whxjx/Rock-Bot.png)'
     } else if (optionAI == 2) {
         optionAI = 2
-        screenResultAI.style.backgroundImage='url(https://i.postimg.cc/WpBFqXTr/Paper-Bot.png)'
+        screenResultAI.style.backgroundImage='url(https://i.postimg.cc/50w9ZQwH/Paper-Bot.png)'
     } else if (optionAI == 3) {
         optionAI = 3
-        screenResultAI.style.backgroundImage='url(https://i.postimg.cc/J7DHh9VM/Scissors-Bot.png)'
+        screenResultAI.style.backgroundImage='url(https://i.postimg.cc/tJpRyR5B/Scissors-Bot.png)'
     }
     compareResult(optionPlayer,optionAI)
 }
 
-/*
-https://i.postimg.cc/zXTLCKGQ/Rock-Bot.png
-https://i.postimg.cc/WpBFqXTr/Paper-Bot.png
-https://i.postimg.cc/J7DHh9VM/Scissors-Bot.png
-*/
 

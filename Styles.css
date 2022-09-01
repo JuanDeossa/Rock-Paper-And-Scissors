@@ -13,6 +13,7 @@ font-family: 'Rubik Iso', cursive;
     --resultIcons:20vh;
     --chooseIcons:14vh;
     --borderColorr1:#202020;
+    --maxWidthContainer:800px;
 }
 *{box-sizing: border-box;margin:0%;padding: 0%;}
 html{
@@ -38,6 +39,22 @@ body{
     border-color: #ac09d0 ;
     border-width: 5px ;
 }
+#Won{
+    font-size: 30px;
+    letter-spacing: 7px;
+    color: #037e32;
+    text-shadow: 2px 2px 1px #000 ;
+}
+#Lose{
+    font-size: 30px;
+    letter-spacing: 7px;
+    color: #7e0303;
+    text-shadow: 2px 2px 1px #000 ;
+}
+#Draw{
+    font-size: 30px;
+    letter-spacing: 7px;
+}
 /* Header Section */
 header{
     display: flex;
@@ -58,7 +75,7 @@ header div{
 }
 header h1{
     font-size: 26px;
-    line-height: 25px;
+    line-height: 30px;
     font-weight: 700;
     color: white;
 }
@@ -77,7 +94,7 @@ main{
 main > div{
     width: 95%;
     min-width: 288px;
-    max-width: 700px; 
+    max-width: var(--maxWidthContainer);
     display: grid;
     justify-items: center;
     grid-column: 1fr;
@@ -107,10 +124,17 @@ main > div{
     color: grey;
     font-size: 20px;
 }
-.Scores > div > p {
+.Scores p {
     font-family: "Chakra Petch", sans-serif;
     color: black;
     font-size: 20px;
+}
+p.result{
+    font-size: 40px;
+    color: #242424;
+    font-weight: 900;
+    text-shadow: 2px 2px 1px #E7F5FF;
+    text-align: center;
 }
 .Scores__Player{
     grid-area: Player;
@@ -154,11 +178,11 @@ main > div{
     background-position: center;
 }
 .Scores__Results--Player{
-    background-image: url("https://cdn-icons-png.flaticon.com/512/1853/1853086.png");
+    background-image: url("https://i.postimg.cc/JzJbGGqx/Dragon2.png");
     grid-area: Picon;
 }
 .Scores__Results--Bot{
-    background-image: url("https://cdn-icons-png.flaticon.com/512/3398/3398643.png");
+    background-image: url("https://i.postimg.cc/85kWKwVX/Bot.png");
     grid-area: Bicon;
 }
 .Scores__Results > p{
@@ -200,11 +224,6 @@ main > div{
     transform: scale(1.15);
     border-width: 3px;
 }
-/* .Buttons--active{
-    transform: scale(1.15);
-    border-color: #ac09d0;
-    border-width: 3px;
-} */
 div.Buttons__Play{
     grid-area: Pl;
     height: auto;
@@ -231,17 +250,17 @@ div.Buttons__Play{
 }
 .Buttons .Buttons__Rock{
     grid-area: R;
-    background-image: url("https://i.postimg.cc/DZwcY8Y2/Rock.png");
+    background-image: url("https://i.postimg.cc/59SNgv4T/Rock.png");
     background-size: 65%;
 }
 .Buttons .Buttons__Paper{
     grid-area: Pp;
-    background-image: url("https://i.postimg.cc/4ytwpjSt/paper.png");
+    background-image: url("https://i.postimg.cc/vThYmR2b/paper.png");
     background-size: 65%;
 }
 .Buttons .Buttons__Scissors{
     grid-area: S;
-    background-image: url("https://i.postimg.cc/Ss1G0kwc/Scissors.png");
+    background-image: url("https://i.postimg.cc/MTkKPmj2/Scissors.png");
     background-size: 60%;
 } 
 /* Footer Section */
@@ -262,21 +281,29 @@ footer section{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2px 10px;    
+    padding: 2px 15px;    
     background-color: #177e92;
     border-radius: 10px; 
     box-shadow: 2px 2px 1px #202020;
 }
+.Icons{
+    display: flex;
+    align-items: center;
+}
+.Icons a{
+    display: flex;
+    align-items: center;
+}
 .Icons__GH{
     display: inline-block;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111425.png');
+    background-image: url('https://i.postimg.cc/QCLpgz32/GitHub.png');
     width: 20px; height: 20px;
     background-size: contain; 
     background-repeat: no-repeat;
 }
 .Icons__LI{
     display: inline-block;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/3938/3938060.png');
+    background-image: url('https://i.postimg.cc/gJLVZWfy/LinkedIn.png');
     width: 20px; height: 20px;
     background-size: contain; 
     background-repeat: no-repeat;
@@ -328,6 +355,19 @@ footer section{
 /* Gradiente Keyframes end */
 
 @media (min-width:600px) {
+    :root{
+        --resultIcons:20vh;
+        --chooseIcons:18vh;
+    }
+    .Scores > div > h3 {
+        font-size: 50px;
+    }
+    .Scores p {
+        font-size: 30px;
+    }
+    div.Buttons__Play{
+        font-size: 45px;
+    }
     footer{
         flex-direction: row;
     }
