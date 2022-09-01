@@ -30,6 +30,11 @@ body{
 .inactive{
     display: none;
 }
+.selectPlayer{
+    transform: scale(1.15);
+    border-color: #ac09d0;
+    border-width: 3px;
+}
 .title-icon{
     background-image: url("https://cdn-icons-png.flaticon.com/512/1862/1862933.png");
     height: 10px;
