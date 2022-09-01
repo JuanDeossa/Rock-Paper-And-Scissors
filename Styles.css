@@ -65,8 +65,8 @@ main{
     height: calc( 100vh - var(--headerHeight) - var(--footerHeight) );
 }
 main div{
+    background-color: aliceblue;
     width: 95%;
-    height: 95%;
     min-width: 288px;
     display: grid;
     grid-column: 1fr;
@@ -78,6 +78,7 @@ main div{
 }
 
 .Scores{
+    background-color: aqua;
     grid-area: Scores;
     justify-self: center;
     font-size: 15px;
@@ -88,7 +89,7 @@ main div{
     grid-template-columns: 50% 50%;
     grid-template-rows: auto auto;
 }
-/* .Scores h3 {
+.Scores h3 {
     font-family: "Chakra Petch", sans-serif;
     text-shadow: 1px 1px 1px black;
     color: grey;
@@ -140,7 +141,7 @@ main div{
 .Scores__Results p{
     grid-row: 2;
     grid-column: 1/span2;
-} */
+} 
 /* .Buttons{
     grid-area: Buttons;
     justify-self: center;
