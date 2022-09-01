@@ -61,37 +61,34 @@ header p{
 main{
     display: grid;
     justify-items: center;
-    background-color: gray;
+    /* background-color: gray; */
     height: calc( 100vh - var(--headerHeight) - var(--footerHeight) );
 }
 main div{
-    width: 90%;
+    width: 95%;
+    height: 95%;
+    min-width: 288px;
     display: grid;
-    grid-column: repeat(6,1fr);
-    grid-template-rows: repeat(5,auto);
+    grid-column: 1fr;
+    grid-template-rows: repeat(2,auto);
     grid-template-areas: 
-        "SPI SPI SPI SBI SBI SBI"
-        "SPP SPP SPP SBP SBP SBP"
-        "RM  RM  RM  RM  RM  RM"
-        "PB  PB  PB  PB  PB  PB"
-        "R   R   PP  PP  S   S "
+        "Scores"
+        "Buttons"
         ;
 }
 
 .Scores{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
-    width: 80%;
+    grid-area: Scores;
+    justify-self: center;
     font-size: 15px;
     text-align: center;
     border: 1px double grey;
     border-radius: 10px;
-    margin: 8% auto 8%;
-    padding: 5rem 0%;
-    max-width: 400px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
 }
-.Scores h3 {
+/* .Scores h3 {
     font-family: "Chakra Petch", sans-serif;
     text-shadow: 1px 1px 1px black;
     color: grey;
@@ -104,51 +101,10 @@ main div{
 .Scores__Bot,.Scores__Player{
     grid-row: 1;
 }
-
-footer{
-    height: var(--footerHeight);
-    justify-self: center;
-    width: calc(100% - 20px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Chakra Petch", sans-serif, Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    border-radius: 5px;    
-}
-footer section{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2px 10px;    
-    background-color: #31a2b9;
-}
-.Icons__GH{
-    display: inline-block;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111425.png');
-    width: 20px; height: 20px;
-    background-size: contain; 
-    background-repeat: no-repeat;
-}
-.Icons__LI{
-    display: inline-block;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/3938/3938060.png');
-    width: 20px; height: 20px;
-    background-size: contain; 
-    background-repeat: no-repeat;
-} 
-
-/* --------------------------------------------------------------------- */
-
-/*
-
-
 .Scores__Results{
     width: 100%;
     grid-row: 2;
     grid-column: 1/span2;
-    background-color: #874def; 
     justify-self: center;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -158,14 +114,14 @@ footer section{
 .Scores__Results div{
     background-color: rgb(32, 32, 32);
     border: 2px solid gray;
-    height: 50px; width: 50px;
+    width: 10px;
+    height: 10px;
     border-radius: 25%;
     justify-self: center;
     align-self: center;
     background-repeat: no-repeat;
     background-size: 60% ;
     background-position: center;
-    display: none;
 }
 .Scores__Results--Player {
     background-image: url("https://i.postimg.cc/DZwcY8Y2/Rock.png");
@@ -184,9 +140,10 @@ footer section{
 .Scores__Results p{
     grid-row: 2;
     grid-column: 1/span2;
-}
-.Buttons{
-    margin: 20% auto 0%;
+} */
+/* .Buttons{
+    grid-area: Buttons;
+    justify-self: center;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: auto auto ;
@@ -194,7 +151,6 @@ footer section{
         " Pl Pl Pl"
         " R  Pp S ";
     max-width: 500px;
-    gap: 50px 0px;
 }
 .Buttons div{
     background-color: #E7F5FF;
@@ -255,7 +211,48 @@ div.Buttons__Play{
     grid-area: S;
     background-image: url("https://i.postimg.cc/Ss1G0kwc/Scissors.png");
     background-size: 60%;
+} */
+
+footer{
+    height: var(--footerHeight);
+    justify-self: center;
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Chakra Petch", sans-serif, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    border-radius: 5px;    
 }
+footer section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 10px;    
+    background-color: #31a2b9;
+}
+.Icons__GH{
+    display: inline-block;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111425.png');
+    width: 20px; height: 20px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+.Icons__LI{
+    display: inline-block;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3938/3938060.png');
+    width: 20px; height: 20px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+} 
+
+/* --------------------------------------------------------------------- */
+
+/*
+
+
+
 */
 
 
