@@ -44,8 +44,16 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function pad(n, width, z) {
+    z = z || '0';
+    n = n + ''; 
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n; 
+}
+
 function compareResult(choosePlayer,chooseAI) {
     if (btnPlay.innerHTML == "Play again!") {
+        screenResultPlayer.style.backgroundImage='url(https://cdn-icons-png.flaticon.com/512/1853/1853086.png)'
+        screenResultAI.style.backgroundImage='url(https://cdn-icons-png.flaticon.com/512/3398/3398643.png)'
         btnPlay.innerHTML = "Play"
         btnRock.removeAttribute("id",'selectPlayer');
         btnPaper.removeAttribute("id",'selectPlayer');
@@ -58,7 +66,8 @@ function compareResult(choosePlayer,chooseAI) {
             optionPlayer = 0;
             btnPlay.innerHTML = "Play again!"
             countWin = countWin + 1;
-            scorePlayer.innerHTML = "Score: " + countWin
+            countWinCeros = pad(countWin,3);
+            scorePlayer.innerHTML = "Score: " + countWinCeros
             screenResultPlayer.removeAttribute("id",'inactive');
             screenResultAI.removeAttribute("id",'inactive');
             textResult.removeAttribute("id",'inactive');
@@ -70,7 +79,8 @@ function compareResult(choosePlayer,chooseAI) {
             optionPlayer = 0;
             btnPlay.innerHTML = "Play again!"
             countLose = countLose + 1;
-            scoreAI.innerHTML = "Score: " + countLose;
+            countLoseCeros = pad(countLose,3);
+            scoreAI.innerHTML = "Score: " + countLoseCeros;
             screenResultPlayer.removeAttribute("id",'inactive');
             screenResultAI.removeAttribute("id",'inactive');
             textResult.removeAttribute("id",'inactive');
@@ -90,6 +100,7 @@ function compareResult(choosePlayer,chooseAI) {
             btnScissor.setAttribute("id","inactive");
         } else {
             alert('Please select an option');
+            screenResultAI.style.backgroundImage='url(https://cdn-icons-png.flaticon.com/512/3398/3398643.png)'
         }
     }
 }
