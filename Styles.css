@@ -7,17 +7,17 @@ font-family: 'Press Start 2P', cursive;
 font-family: 'Rubik Iso', cursive;
 */
 :root{
-    --gbcTime: 15s;
-    --bitcoin-orange:#F7731A;
-    --soft-orange:#FFE9D5;
-    --secondary-blue:#1A9AF7;
-    --soft-blue:#E7F5FF;
+    --footerHeight:60px;
+    --headerHeight:130px;
+    --gbcTime:8s;
 }
 *{box-sizing: border-box;margin:0%;padding: 0%;}
 html{
     font-size: 6.25%;
 }
 body{
+    display: grid;
+    width: 100vw;
     height: 100vh;
     /* Animated gradient on background color */
     background: linear-gradient(197deg, #0ecf6f, #42e1cb, #ac09d0);
@@ -27,31 +27,57 @@ body{
     -o-animation: AnimationName var(--gbcTime) ease infinite;
     animation: AnimationName var(--gbcTime) ease infinite;
 }
-.title-icon{
-    background-image: url("https://cdn-icons-png.flaticon.com/512/1862/1862933.png");
-    height: 10px;
-}
+
 header{
+    display: flex;
+    justify-content: center;
+    /* background-color: #1A9AF7; */
+    min-height: var(--headerHeight);
+}
+header div{
+    height: calc( var(--headerHeight) - 0px );
+    width: 95%;
+    min-width: 288px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     font-family: 'Press Start 2P', cursive, sans-serif;
-    line-height: 30px;
-    padding: 15px;
+    text-align: center;
     text-shadow: 1px 1px 1px black;
 }
 header h1{
-    font-size: 25px;
-    text-align: center;
+    font-size: 26px;
+    line-height: 25px;
     font-weight: 700;
     color: white;
 }
 header p{
-    font-size: 10px;
-    text-align: center;
+    font-size: 15px; 
+    line-height: 17px;
     font-weight: 400;
     color: white;
 }
+main{
+    display: grid;
+    justify-items: center;
+    background-color: gray;
+    height: calc( 100vh - var(--headerHeight) - var(--footerHeight) );
+}
+main div{
+    width: 90%;
+    display: grid;
+    grid-column: repeat(6,1fr);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas: 
+        "SPI SPI SPI SBI SBI SBI"
+        "SPP SPP SPP SBP SBP SBP"
+        "RM  RM  RM  RM  RM  RM"
+        "PB  PB  PB  PB  PB  PB"
+        "R   R   PP  PP  S   S "
+        ;
+}
+
 .Scores{
     display: grid;
     grid-template-columns: 50% 50%;
@@ -78,16 +104,56 @@ header p{
 .Scores__Bot,.Scores__Player{
     grid-row: 1;
 }
+
+footer{
+    height: var(--footerHeight);
+    justify-self: center;
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Chakra Petch", sans-serif, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    border-radius: 5px;    
+}
+footer section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 10px;    
+    background-color: #31a2b9;
+}
+.Icons__GH{
+    display: inline-block;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111425.png');
+    width: 20px; height: 20px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+.Icons__LI{
+    display: inline-block;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3938/3938060.png');
+    width: 20px; height: 20px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+} 
+
+/* --------------------------------------------------------------------- */
+
+/*
+
+
 .Scores__Results{
     width: 100%;
     grid-row: 2;
     grid-column: 1/span2;
-    /* background-color: #874def;  */
+    background-color: #874def; 
     justify-self: center;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: auto auto;
-    /* display: none; */
+    display: none;
 }
 .Scores__Results div{
     background-color: rgb(32, 32, 32);
@@ -99,7 +165,7 @@ header p{
     background-repeat: no-repeat;
     background-size: 60% ;
     background-position: center;
-    /* display: none; */
+    display: none;
 }
 .Scores__Results--Player {
     background-image: url("https://i.postimg.cc/DZwcY8Y2/Rock.png");
@@ -146,7 +212,7 @@ header p{
     border-color: #ac09d0;
     border-width: 3px;
 }
-/* Tooggle when any button is clicked or unclicked */
+Tooggle when any button is clicked or unclicked
 .Buttons--active{
     transform: scale(1.15);
     border-color: #ac09d0;
@@ -190,37 +256,8 @@ div.Buttons__Play{
     background-image: url("https://i.postimg.cc/Ss1G0kwc/Scissors.png");
     background-size: 60%;
 }
-footer{
-    position: absolute;
-    width: 95%;
-    left: 2.5%;
-    bottom: 4px;
-    font-family: "Chakra Petch", sans-serif, Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    background-color: #31a2b9;
-    border-radius: 5px;
-}
-footer section{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2px 10px;
-}
-.Icons__GH{
-    display: inline-block;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111425.png');
-    width: 20px; height: 20px;
-    background-size: contain; 
-    background-repeat: no-repeat;
-}
-.Icons__LI{
-    display: inline-block;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/3938/3938060.png');
-    width: 20px; height: 20px;
-    background-size: contain; 
-    background-repeat: no-repeat;
-}
+*/
+
 
 
 /* Gradiente Keyframes */
@@ -266,8 +303,14 @@ footer section{
 }
 /* Gradiente Keyframes end */
 
+@media (min-width:1000px) {
+    footer{
+        flex-direction: row;
+    }
+}
+
 /* Medium Phone */
-@media (min-width:500px) {  
+/* @media (min-width:500px) {  
     header h1{
         font-size: 28px;
         line-height: 34px;
@@ -307,7 +350,7 @@ footer section{
         height: 90px; width: 90px;
     }
 }
-/* Tablet */
+Tablet
 @media (min-width:750px) {
     header h1{
         font-size: 55px    ;
@@ -352,7 +395,7 @@ footer section{
         margin: 0 0 0%;  
     } 
 }
-/* Laptod */
+Laptod
 @media (min-width:1100px) {
     .Scores{
         font-size: 40px;
@@ -371,7 +414,7 @@ footer section{
         height: auto;
         margin: 0 0 0%;  
     } 
-}
+} */
 /* Desktop */
 
 
