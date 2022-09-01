@@ -7,9 +7,9 @@ font-family: 'Press Start 2P', cursive;
 font-family: 'Rubik Iso', cursive;
 */
 :root{
+    --gbcTime:8s;
     --footerHeight:60px;
     --headerHeight:130px;
-    --gbcTime:8s;
     --resultIcons:20vh;
     --chooseIcons:14vh;
 }
@@ -30,7 +30,7 @@ body{
     animation: AnimationName var(--gbcTime) ease infinite;
 }
 .inactive{
-    display: none;
+    display: none !important;
 }
 .selectPlayer{
     transform: scale(1.15);
@@ -41,6 +41,7 @@ body{
     background-image: url("https://cdn-icons-png.flaticon.com/512/1862/1862933.png");
     height: 10px;
 } */
+/* Header Section */
 header{
     display: flex;
     justify-content: center;
@@ -70,6 +71,7 @@ header p{
     font-weight: 400;
     color: white;
 }
+/* Main Section */
 main{
     display: grid;
     justify-items: center;
@@ -197,7 +199,6 @@ main > div{
 }
 .Buttons *:hover{
     transform: scale(1.15);
-    /* border-color: #ac09d0; */
     border-width: 3px;
 }
 /* .Buttons--active{
@@ -243,7 +244,7 @@ div.Buttons__Play{
     background-image: url("https://i.postimg.cc/Ss1G0kwc/Scissors.png");
     background-size: 60%;
 } 
-
+/* Footer Section */
 footer{
     height: var(--footerHeight);
     justify-self: center;
@@ -279,7 +280,6 @@ footer section{
 } 
 
 /* --------------------------------------------------------------------- */
-
 
 /* Gradiente Keyframes */
 @-webkit-keyframes AnimationName {
@@ -331,117 +331,6 @@ footer section{
 }
 
 
-
-
-/* 
-@media (min-width:500px) {  
-    header h1{
-        font-size: 28px;
-        line-height: 34px;
-    }
-    header p{
-        font-size: 12px;
-    }
-    .Buttons{
-        margin-top: 0%;
-        width: 70%;
-        display: grid;
-        justify-content: center;
-        align-items: end;
-        justify-items: center;
-        gap: 2.5vh;
-        grid-template-columns: 80%;
-        grid-template-rows: auto auto auto auto ;
-        grid-template-areas: 
-            "Pl"
-            "R "
-            "Pp"
-            "S ";
-    }
-    .Buttons div{
-        width: 13.8vh; 
-        height: 13.8vh;
-    }
-    div.Buttons__Play{
-        height: auto;
-        margin: 0 0 1%;
-    }
-    .Scores{
-        font-size: 18px;
-        margin: 2% auto 6%;
-    }
-    .Scores__Results div{
-        height: 90px; width: 90px;
-    }
-}
-Tablet
-@media (min-width:750px) {
-    header h1{
-        font-size: 55px    ;
-        line-height: 130%;
-    }
-    header p{
-        font-size: 30px    ;
-    }
-    .Scores{
-        font-size: 40px;
-        max-width: 700px;
-        margin: 6vh auto 5vh;
-    }
-    .Scores__Results div{
-         width: 170px;
-         height: 170px;
-    }
-    footer {
-        display: flex;
-        flex-direction: row;
-    }
-    footer section{
-        font-size: 12px;
-        padding: 10px 10px;
-    }
-    .Buttons{
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: auto auto ;
-        grid-template-areas: 
-            " Pl Pl Pl"
-            " R  Pp S ";
-        max-width: 700px;
-    }
-    .Buttons div{
-        height: 200px; 
-        width: 200px;
-    }
-    section > div.Buttons__Play{
-        width: 250px;
-        font-size: 40px;
-        height: auto;
-        margin: 0 0 0%;  
-    } 
-}
-Laptod
-@media (min-width:1100px) {
-    .Scores{
-        font-size: 40px;
-        max-width: 700px;
-        margin: 1vh auto 5vh;
-    }
-    .Scores__Results div{
-         width: 160px;
-         height: 160px;
-    }
-    .Buttons div{
-        height: 190px; width: 190px;
-    } 
-    div.Buttons__Play{
-        font-size: 40px;
-        height: auto;
-        margin: 0 0 0%;  
-    } 
-} 
- */
 
 
     
